@@ -29,9 +29,17 @@ with col_input:
         label='UAV MTOW (kg)',
         min_value=0.250,
         max_value=150.0,
-        value=9.0,
+        value=2.5,
         format='%f',
         help='Insert the maximum take-off mass of the employed UAV, expressed in kg.'
+    )
+    uav_side = st.number_input(
+        label='Dimension of a main side of the UAV (m)',
+        min_value=0.1,
+        max_value=20.0,
+        value=0.5,
+        format='%f',
+        help=r'Insert the measure of the side of an hypothetical box that encloses tha whole UAV.'
     )
     g = st.number_input(
         label='Gravity acceleration (m/s^2)',
@@ -57,14 +65,7 @@ with col_input:
         format='%f',
         help=r'Air typical value is 1.212 kg/m^3'
     )
-    uav_side = st.number_input(
-        label='Dimension of a main side of the UAV (m)',
-        min_value=0.1,
-        max_value=20.0,
-        value=0.5,
-        format='%f',
-        help=r'Insert the measure of the side of an hypothetical box that encloses tha whole UAV.'
-    )
+
 
 # Make computations
 if st.button('Compute'):
